@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Someone Special ❤️</title>
+
+<title>Happy Birthday ❤️</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -15,11 +17,11 @@ font-family:Arial,sans-serif;
 
 body{
 overflow:hidden;
-background:linear-gradient(135deg,#ffd6e8,#ffeef5);
+height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-height:100vh;
+background:linear-gradient(135deg,#ff9ecf,#ffd6e7,#ffeaf5);
 }
 
 #giftPage{
@@ -33,152 +35,374 @@ align-items:center;
 }
 
 .gift{
+
 font-size:130px;
+
 cursor:pointer;
-transition:.6s;
-animation:float 2s infinite ease-in-out;
+
+animation:float 2s ease-in-out infinite;
+
+transition:.5s;
+
+filter:drop-shadow(0 0 25px hotpink);
+
 }
 
 .gift:hover{
+
 transform:scale(1.1);
+
 }
 
 @keyframes float{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-12px);}
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
 }
 
 .tap{
+
 margin-top:20px;
-font-size:22px;
-color:#ff4081;
+
+font-size:24px;
+
+color:#ff2d75;
+
+font-weight:bold;
+
 animation:blink 1s infinite;
+
 }
 
 @keyframes blink{
-50%{opacity:.3;}
+
+50%{
+
+opacity:.35;
+
+}
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+overflow:hidden;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ff9ecf,#ffd6e7,#ffeaf5);
+}
+
+#giftPage{
+position:absolute;
+width:100%;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.gift{
+
+font-size:130px;
+
+cursor:pointer;
+
+animation:float 2s ease-in-out infinite;
+
+transition:.5s;
+
+filter:drop-shadow(0 0 25px hotpink);
+
+}
+
+.gift:hover{
+
+transform:scale(1.1);
+
+}
+
+@keyframes float{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+}
+
+.tap{
+
+margin-top:20px;
+
+font-size:24px;
+
+color:#ff2d75;
+
+font-weight:bold;
+
+animation:blink 1s infinite;
+
+}
+
+@keyframes blink{
+
+50%{
+
+opacity:.35;
+
+}
+
 }
 
 #main{
+
 display:none;
+
+position:absolute;
+
 width:100%;
+
 height:100%;
+
 justify-content:center;
+
 align-items:center;
+
 flex-direction:column;
-background:linear-gradient(to bottom,#fff0f6,#ffe6ef);
+
+background:linear-gradient(to bottom,#fff0f7,#ffe4ef);
+
 animation:fade 1.5s;
+
 }
 
 @keyframes fade{
-from{opacity:0;}
-to{opacity:1;}
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
 }
 
 h1{
-font-size:42px;
-color:#ff4081;
+
+font-size:48px;
+
+color:#ff2d75;
+
+margin-bottom:15px;
+
+text-shadow:0 0 10px pink;
+
 }
 
 p{
-margin-top:20px;
+
 font-size:22px;
-color:#444;
+
+color:#555;
+
 }
 
-.heart{
+.sparkle{
+
 position:absolute;
-font-size:25px;
-animation:rise linear infinite;
+
+color:white;
+
+animation:sparkle 5s linear infinite;
+
 }
 
-@keyframes rise{
+@keyframes sparkle{
+
 from{
-transform:translateY(100vh);
+
+transform:translateY(100vh) scale(.5);
+
 opacity:1;
+
 }
+
 to{
-transform:translateY(-120vh);
+
+transform:translateY(-120vh) scale(1.2);
+
 opacity:0;
+
 }
+
 }
+
 </style>
 </head>
 
 <body>
 
 <div id="giftPage">
+
 <div class="gift" onclick="openGift()">🎁</div>
+
 <div class="tap">Tap the Gift ❤️</div>
+
 </div>
 
 <div id="main">
+
 <h1>Happy Birthday ❤️</h1>
-<p>Your surprise begins...</p>
+
+<p>Your magical surprise begins...</p>
+
 </div>
 
-<script>
-function openGift(){
+}
 
-document.querySelector(".gift").innerHTML="🎉";
+#main{
 
-confetti();
+display:none;
 
-setTimeout(()=>{
-document.getElementById("giftPage").style.display="none";
-document.getElementById("main").style.display="flex";
-},1000);
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+background:linear-gradient(to bottom,#fff0f7,#ffe4ef);
+
+animation:fade 1.5s;
 
 }
 
+@keyframes fade{
 
-function hearts(){
+from{
 
-const h=document.createElement("div");
-
-h.className="heart";
-
-h.innerHTML=Math.random()>0.5?"💖":"💕";
-
-h.style.left=Math.random()*100+"vw";
-
-h.style.animationDuration=(4+Math.random()*4)+"s";
-
-document.body.appendChild(h);
-
-setTimeout(()=>h.remove(),8000);
+opacity:0;
 
 }
-function confetti(){
 
-for(let i=0;i<150;i++){
+to{
 
-const c=document.createElement("div");
-
-c.innerHTML=["🎊","🎉","✨","💖"][Math.floor(Math.random()*4)];
-
-c.style.position="fixed";
-c.style.left=Math.random()*100+"vw";
-c.style.top=(-50-Math.random()*300)+"px";
-c.style.fontSize=(15+Math.random()*20)+"px";
-c.style.transition="all 4s ease-in";
-c.style.transitionDelay=(Math.random()*0.6)+"s";
-document.body.appendChild(c);
-
-setTimeout(()=>{
-c.style.transform=`translate(${Math.random()*600-300}px, 110vh) rotate(${Math.random()*1080}deg)`;
-},10);
-
-setTimeout(()=>{
-c.remove();
-},3000);
+opacity:1;
 
 }
 
 }
-setInterval(hearts,300);
 
-</script>
+h1{
 
-</body>
-</html>
+font-size:48px;
+
+color:#ff2d75;
+
+margin-bottom:15px;
+
+text-shadow:0 0 10px pink;
+
+}
+
+p{
+
+font-size:22px;
+
+color:#555;
+
+}
+
+.sparkle{
+
+position:absolute;
+
+color:white;
+
+animation:sparkle 5s linear infinite;
+
+}
+
+@keyframes sparkle{
+
+from{
+
+transform:translateY(100vh) scale(.5);
+
+opacity:1;
+
+}
+
+to{
+
+transform:translateY(-120vh) scale(1.2);
+
+opacity:0;
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="giftPage">
+
+<div class="gift" onclick="openGift()">🎁</div>
+
+<div class="tap">Tap the Gift ❤️</div>
+
+</div>
+
+<div id="main">
+
+<h1>Happy Birthday ❤️</h1>
+
+<p>Your magical surprise begins...</p>
+
+</div>
