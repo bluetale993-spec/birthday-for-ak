@@ -159,9 +159,10 @@ c.innerHTML=["🎊","🎉","✨","💖"][Math.floor(Math.random()*4)];
 
 c.style.position="fixed";
 c.style.left=Math.random()*100+"vw";
-c.style.top="-20px";
+c.style.top=(-50-Math.random()*300)+"px";
 c.style.fontSize=(15+Math.random()*20)+"px";
 c.style.transition="all 4s ease-in";
+c.style.transitionDelay=(Math.random()*0.6)+"s";
 document.body.appendChild(c);
 
 setTimeout(()=>{
