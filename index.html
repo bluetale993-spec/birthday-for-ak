@@ -118,15 +118,19 @@ opacity:0;
 </div>
 
 <script>
-
 function openGift(){
+
 document.querySelector(".gift").innerHTML="🎉";
+
+confetti();
 
 setTimeout(()=>{
 document.getElementById("giftPage").style.display="none";
 document.getElementById("main").style.display="flex";
-},800);
+},1000);
+
 }
+
 
 function hearts(){
 
@@ -145,7 +149,34 @@ document.body.appendChild(h);
 setTimeout(()=>h.remove(),8000);
 
 }
+function confetti(){
 
+for(let i=0;i<150;i++){
+
+const c=document.createElement("div");
+
+c.innerHTML=["🎊","🎉","✨","💖"][Math.floor(Math.random()*4)];
+
+c.style.position="fixed";
+c.style.left=Math.random()*100+"vw";
+c.style.top="-20px";
+c.style.fontSize=(15+Math.random()*20)+"px";
+c.style.transition="all 3s linear";
+
+document.body.appendChild(c);
+
+setTimeout(()=>{
+c.style.top="110vh";
+c.style.transform=`translateX(${Math.random()*200-100}px) rotate(720deg)`;
+},10);
+
+setTimeout(()=>{
+c.remove();
+},3000);
+
+}
+
+}
 setInterval(hearts,300);
 
 </script>
