@@ -161,13 +161,11 @@ c.style.position="fixed";
 c.style.left=Math.random()*100+"vw";
 c.style.top="-20px";
 c.style.fontSize=(15+Math.random()*20)+"px";
-c.style.transition="all 3s linear";
-
+c.style.transition="all 4s ease-in";
 document.body.appendChild(c);
 
 setTimeout(()=>{
-c.style.top="110vh";
-c.style.transform=`translateX(${Math.random()*200-100}px) rotate(720deg)`;
+c.style.transform=`translate(${Math.random()*600-300}px, 110vh) rotate(${Math.random()*1080}deg)`;
 },10);
 
 setTimeout(()=>{
